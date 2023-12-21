@@ -1,0 +1,63 @@
+http://backlogtool.com/git-guide/kr/
+GIT 브랜치와 머지
+Master(브랜치) GIT 생성, 커밋하면 생성된다.
+Hotfix : 마스터에서 파생되어 온 사용자 (버그가 생겼을때 마스터의 경우 바로 배포가 되므로, 중간에 버그 수정후 마스터로 머지)   [ 폴더처럼 생각하자 ]
+Release : Develop 에서 파생되어 왔다.
+Develop : 실제 개발
+Feature :  신규 기능 [ 폴더처럼 생각하자 ]   Develop 와 머지
+
+
+동작원리
+데이터를 가져오거나 프로젝트를 저장할 때마다  그 시점의 파일에 대해서 스냅샷 저장
+변경되지 않은 파일은 다시 파일을 저장하지 않고 이전에 지정한 동일한 파일을 링크
+데이터를 저장하기 전에 체크섬을 구하고 이 체크섬을 통해 데이터를 관리
+SHA-1 해쉬 사용(16진수 문자 40개로 구성,  파일의 내용 또는 디렉토리 구조를 기반으로 계산)
+파일 이름이 아닌 컨텐츠의 해쉬 값을 저장(파일명이 변경되도 내용이 동일하면 같은 해쉬)
+
+Working Directory :  Checkout the project(즉 원격 저장소의 리포지터리를 클론시) 
+Stagin Area : 파일을 생성시(ADD)
+Repository : Commit 시 저장된다.
+
+.gitconfig  --->  사용자 [ 문서 ] 위치에 있다
+.config     --->  git의 디렉토리에 있다.
+git config --global user.name user   (사용자, 전역설정)
+git config --global user.email user@user.co.kr (이메일, 전역설정)
+git config user.name user
+git config user.email user@user.co.kr   (로컬)
+
+
+https://github.com/docker/machine 
+Watch : 관심있는 프로젝트의 변경사항 알림이 오도록 설정  (unwatch)
+Star : 좋아요
+fork : 프로젝트 가지고 오기(종속)
+프로젝트가 복제 되므로 지역 저장소에 다운및 수정이 가능하다(GitHub, 오픈소스, 비공개는 제외)
+fork 가 많을 수록 관심이 많다고 생각 할 수 있다.
+Code : Source 위치 하는곳
+issues : 이슈관리,(이슈 트래킹 도구), 협업시 이력관리, 소스의 변경 관리등 유용하게 사용
+Pull Request : fork 후 버그, 기능추가등 설정후 Pull Request 하면 기존(base) 프로젝트 진행자가 기존 프로젝트에 추가 할 수 있다.
+Wiki : 메뉴얼
+insights (Pulse, Graphs)
+Pulse : 해당 프로젝트의 변화들과 외부에서 주는 관심들을 보여준다.
+Graphs : 프로젝트 현황을 시각화
+
+commits : 몇개의 버전이 존재하는가 (클릭 확인)
+releases : 정식버전
+contributors : 등록 사용자(수정가능자)
+
+
+README.md  (마크다운)
+
+# Linux GitHub
+## 중간 제목
+### 소제목
+안녕하세요, 반갑습니다..... 여기에 내용을 적어!!!!
+
+>note : GitHub.....
+
+Blog : [naver.com](https://naver.com) - naver.com
+
+|site|URL|
+|--|--|
+|Github|https://github.com|
+
+<img src="https://www.kali.org/images/notebook-kali-2022.1.jpg">
